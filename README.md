@@ -32,7 +32,7 @@ Run the following commands to setup
 
 #### Normal setup
 ```
-git clone https://github.com/buszk/heap-expo.git
+git clone https://github.com/messlabnyu/heap-expo.git
 cd heap-expo
 PATHSPEC=/path/to/spec/cpu2006 ./autosetup.sh
 ```
@@ -43,7 +43,7 @@ docker run --name heap-expo --privileged -it -v /path/to/spec/cpu2006:/cpu2006 d
 ```
 Inside the docker container, install depencies and then run the following script to build.
 ```
-git clone https://github.com/buszk/heap-expo.git /heap-expo
+git clone https://github.com/messlabnyu/heap-expo.git /heap-expo
 cd /heap-expo
 FORCE_UNSAFE_CONFIGURE=1 PATHSPEC=/cpu2006 ./autosetup.sh
 ```
@@ -58,12 +58,12 @@ After build, use `./run-spec-cpu2006-{baseline-lto,heap-expo,dangsan}.sh all` to
 
 ## Coverage Test (Compared with DangSan) 
 
-All tested c programs are located at [tests/](https://github.com/buszk/heap-expo/tree/port/tests) in port branch. We summarized the test results to Table 5.
+All tested c programs are located at [tests/](https://github.com/messlabnyu/heap-expo/tree/port/tests) in port branch. We summarized the test results to Table 5.
 
 To provide an easy test environment, we ported HeapExpo from llvm-3.8 to llvm-10. It should also be compatible with other modern versions. We put our ported version under the port branch. In order to build our test, you can use the following commands.
 
 ```
-git clone https://github.com/buszk/heap-expo.git
+git clone https://github.com/messlabnyu/heap-expo.git
 cd heap-expo
 git checkout port
 make -j
@@ -74,4 +74,4 @@ Run test with
 make test
 ```
 
-The  compared coverage test script is in [Makefile](https://github.com/buszk/heap-expo/blob/port/tests/Makefile). You can find out the tests where HeapExpo detects UAF while DangSan fails.
+The  compared coverage test script is in [Makefile](https://github.com/messlabnyu/heap-expo/blob/port/tests/Makefile). You can find out the tests where HeapExpo detects UAF while DangSan fails.
