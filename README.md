@@ -3,18 +3,25 @@
 ## Introduction
 HeapExpo is an instrumentation tool to mitigate use-after-free(UAF) vulnerability which is widely present in C/C++ programs. Previous work DangSan is unable to cover important source of danging pointers like local variables and function arguments. HeapExpo addresses the coverage gap by pinpointing promoted pointer that can casue UAF. 
 
+## Artifact Evaluation
+This repository consists of the source code of HeapExpo. The following are documented processes for reproducing our benchamrk results and coverage comparison tests. The github repository is at https://github.com/messlabnyu/heap-expo.
+
 ## Prerequiste
 Install dependencies. 
 
 ```
 sudo apt-get update
-sudo apt-get install -y bison build-essential gettext git pkg-config python ssh subversion wget time vim
+sudo apt-get install -y bison build-essential gettext git \
+            pkg-config python ssh subversion wget time vim
 ```
 
 For runnig comparision tests, you need to install llvm-10.
 ```
 sudo apt-get install -y automake libtool-bin libunwind-dev
-sudo apt-get install -y libllvm-10-ocaml-dev libllvm10 llvm-10 llvm-10-dev llvm-10-doc llvm-10-runtime clang-10 clang-tools-10 libclang-common-10-dev libclang-10-dev libclang1-10 libc++-10-dev libc++abi-10-dev
+sudo apt-get install -y libllvm-10-ocaml-dev libllvm10 llvm-10 \
+            llvm-10-dev llvm-10-doc llvm-10-runtime clang-10 \
+            clang-tools-10 libclang-common-10-dev libclang-10-dev \
+            libclang1-10 libc++-10-dev libc++abi-10-dev
 ```
 
 Or install llvm-10 more easily with llvm scripts
