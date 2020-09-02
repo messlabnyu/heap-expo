@@ -57,12 +57,6 @@ FORCE_UNSAFE_CONFIGURE=1 PATHSPEC=/cpu2006 ./autosetup.sh
 
 After build, use `./run-spec-cpu2006-{baseline-lto,heap-expo,dangsan}.sh all` to run the benchmarks. The results available in /cpu2006/result are shown in Figure 2 of our paper. 
 
-### Benchmarking
-
-```
-./run-spec-cpu2006-dangsan.sh all
-```
-
 ## Coverage Test (Compared with DangSan) 
 
 All tested c programs are located at [tests/](https://github.com/messlabnyu/heap-expo/tree/port/tests) in port branch. We summarized the test results to Table 5.
